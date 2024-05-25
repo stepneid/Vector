@@ -1,18 +1,28 @@
-﻿#include <iostream>
-#include <vector> 
-#include <cmath>
 using namespace std;
-int main()
-{
-	vector<int> v{ 1, 2, 3, 4 };
-	v += 10;
-	for (const int ele : v) {
-		cout << ele << " ";
-		cout << "\n";
+#include <iostream>
+#include <vector>
+void Vector(vector<int>& vec, int n) {
+	for (int x = 0; x < vec.size(); x++) {
+		vec[x] += n;
 	}
-	v /= 2;
-	for (const int ele : v) {
-		cout << ele << " ";
+}
+int main() {
+	setlocale(LC_ALL, "ru");
+	vector<int> vec = { 1, 2, 3, 4, 5 };
+	int n;
+	int i = 0;
+	cout << "Изначельный вектор: "<<endl;
+	for (int x = 0; x < vec.size();x++ ) {
+		cout << vec[x] << " ";
+	}
+	cout <<endl<< "Элементы вектора увеличить на: ";
+	cin >> n;
+	Vector(vec, n);
+
+	cout << endl;
+	cout << "Вектор увеличиный на: "<< n <<endl;
+	for (int x = 0; x < vec.size(); x++) {
+		cout << vec[x] << " ";
 	}
 	return 0;
 }
